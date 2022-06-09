@@ -21,12 +21,49 @@ function game(state = initialState, action) {
         return state;
       }
       squares[action.index] = state.xIsNext ? "X" : "O";
-      history: history.concat([
-        {
-          squares: squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !state.xIsNext
-  };
+      return {
+        history: history.concat([
+          {
+            squares: squares
+          }
+        ]),
+        stepNumber: history.length,
+        xIsNext: !state.xIsNext
+      };
+      
+      default:
+        return state;
+    
+    case JUMP_TO_PAST:
+      return {
+        ...state,
+        stepNumber: action.step,
+        xIsNext: action.step % 2 === 0
+      }
+  }
 }
+
+export const app =  combineReducers({ game });
+
+// =========================================
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    // lineの1つ目の要素がnullではなく、2つ目、3つ目と同じ場合勝ち
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+} 
