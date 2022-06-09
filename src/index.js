@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Game } from "./components";
-import { app } from './components';
+import { app } from './reducers';
+import { GameContainer } from './containers'
 import './index.css';
 
 const store = createStore(app);
