@@ -42,47 +42,12 @@ class Board extends React.Component {
 }
 
 export class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      histroy: [{
-        squares: Array(9).fill(null),
-      }],
-      stepNumber: 0,
-      xIsNext: true,
-    };
-  }
-
-  handleClick(i) {
-    const histroy = this.state.histroy.slice(0, this.state.stepNumber + 1);
-    const current = histroy[histroy.length - 1];
-    const squares = current.squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      histroy: histroy.concat([{
-        squares: squares
-      }]),
-      stepNumber: histroy.length,
-      xIsNext: !this.state.xIsNext,
-    });
-  }
-
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0,
-    });
-  }
-
   render() {
-    const histroy = this.state.histroy;
-    const current = histroy[this.state.stepNumber];
+    const history = this.state.history;
+    const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
 
-    const moves = histroy.map((step, move) => {
+    const moves = history.map((step, move) => {
       const desc = move ?
         `${move}手目に戻る`:
         'ゲームスタート';
