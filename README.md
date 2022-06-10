@@ -18,7 +18,7 @@ ReactチュートリアルとReduxの解説を読んだ後で、こちら（[Rea
 ### 実践したこと
 
 - Reactチュートリアル（解説通り進める)
-- 上記の記事を参考に、Reduxを導入
+- 上記の記事を参考に、Reduxを導入(Reduxの公式ドキュメントもオエオエしながら読んだ)
 - コンポーネントを切り出してファイル分割
 - class componentからfunctional componentにリファクタリング
 
