@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { clickSquare, jumpToPast } from "./actions";
-import { Game } from "./components";
+import { Game } from "./components/Game";
 
 const mapStateToProps = (state, ownProps) => {
   return state.game;
