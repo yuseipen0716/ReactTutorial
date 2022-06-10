@@ -54,6 +54,8 @@ const ShoppingList = (props) => {
 
 propsは親コンポーネント（ShoppingListコンポーネントのexport先)で`<ShoppingList name="Ken" />`のように渡される。
 
+#### 関数コンポーネント? クラスコンポーネント?
+
 コンポーネントには関数コンポーネント(functional component)とクラスコンポーネント(class component)の2種類ある。
 
 今では*クラスコンポーネントはほとんど使われていないそう。*(stateという、コンポーネントがもつ状態をコンポーネントに持たせるためには
