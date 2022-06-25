@@ -7,6 +7,7 @@ import { Game } from "./components/Game";
 import { app } from './reducers';
 import { GameContainer } from './containers'
 import './index.css';
+// コンフリクトのテスト2
 
 const store = createStore(app);
 
