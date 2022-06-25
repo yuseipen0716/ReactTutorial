@@ -10,6 +10,7 @@ import './index.css';
 // コンフリクトのテスト1
 // コンフリクトのテスト2
 // コンフリクトのテスト3
+// コンフリクトのテスト4
 
 const store = createStore(app);
 
