@@ -8,6 +8,7 @@ import { app } from './reducers';
 import { GameContainer } from './containers'
 import './index.css';
 // コンフリクトのテスト1
+// コンフリクトのテスト2
 
 const store = createStore(app);
 
